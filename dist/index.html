@@ -12,7 +12,7 @@
     <nav>
         <div>
             <div>
-                <p>Projects</p>
+                <p id="project-nav">Projects</p>
                 <i class="fa-solid fa-plus" id="addProject"></i>
             </div>
             <ul id="ulList">
@@ -21,16 +21,7 @@
         </div>
     </nav>
     <div class="container">
-        <!-- <section class="project">
-            <div>
-                <h1>Projects</h1>
-                <button id="addProject"><i class="fa-solid fa-plus"></i> Add project</button>
-            </div>
-            <hr>
-            <ul>
-                <li><i class="fa-solid fa-circle"></i> Homework</li>
-            </ul>
-        </section> -->
+
     </div>
     
     <div class="addProject display-none">
@@ -41,8 +32,30 @@
                 <label for="nameProject">Name</label>
                 <input type="text" name="nameProject" id="nameProject" required>
                 <div>
-                    <input type="button" value="Cancel" id="cancel">
+                    <input type="button" value="Cancel" id="cancelP">
                     <input type="submit" value="Add" id="addP">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="addTodo display-none">
+        <div>
+            <h2>Add Todo</h2>
+            <hr>
+            <form action="">
+                <label for="nameTodo">Name</label>
+                <input type="text" name="nameTodo" id="nameTodo" required>
+                <label for="descriptionTodo">Description</label>
+                <input type="text" name="descriptionTodo" id="descriptionTodo" required>
+                <label for="dueDateTodo">Due date</label>
+                <input type="text" name="dueDateTodo" id="dueDateTodo" required>
+                <label for="priorityTodo">Priority</label>
+                <input type="number" name="priorityTodo" id="priorityTodo" min="1" max="4" required>
+
+                <div>
+                    <input type="button" value="Cancel" id="cancelT">
+                    <input type="submit" value="Add" id="addT">
                 </div>
             </form>
         </div>

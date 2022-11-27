@@ -1,22 +1,28 @@
 const container = document.querySelector('.container');
 export const projects = [];
+
 function Project(title){
     this.title = title;
-    let _todoItems = [];
+    this._todoItems = [];
 }
 Project.prototype.addTodoProject = function (todo){
-    _todoItems.push(todo);
+    this._todoItems.push(todo);
 }
 Project.prototype.getTitle = function(){
-    return this.title
+    return this.title;
 }
+
 export const addNewProject = (title)=>{
     let item = new Project(title);
     projects.push(item)
     addUlProject();
 }
 
-export const displayProject = () =>{
+export const addNewTodo = (todo, index) =>{
+    projects[index].addTodoProject(todo)
+}
+
+export const displayProjects = () =>{
     container.innerHTML = `
         <section class="project">
             <div>
@@ -35,10 +41,21 @@ const addUlProject = () => {
     uls.forEach(ul=>{
         ul.textContent = '';
         for (let i = 0; i < projects.length; i++) {
-            console.log(projects[i].getTitle());
-            ul.innerHTML += `<li data-set="${i}"><i class="fa-solid fa-circle"></i>${projects[i].getTitle()}</li>`
-            
+            ul.innerHTML += `<li data-index="${i}" id="projectLi"><i class="fa-solid fa-circle"></i>${projects[i].getTitle()}</li>` 
         }
-
     })
+}
+
+export const displayProject = (index)=> {
+    container.innerHTML = `
+        <section class="">
+            <div>
+                <h1>${projects[index].getTitle()}</h1>
+                <button id="addTodo" data-indexProject="${index}"><i class="fa-solid fa-plus"></i> Add Todo</button>
+            </div>
+            <ul id="">
+            </ul>
+        </section>
+    `
+
 }
