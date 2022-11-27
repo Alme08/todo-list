@@ -11,16 +11,44 @@
 <body>
     <nav>
         <div>
-            <h2> <a href="">Projects</a></h2>
-            <ul>
+            <div>
+                <p>Projects</p>
+                <i class="fa-solid fa-plus" id="addProject"></i>
+            </div>
+            <ul id="ulList">
     
             </ul>
         </div>
     </nav>
     <div class="container">
-
+        <!-- <section class="project">
+            <div>
+                <h1>Projects</h1>
+                <button id="addProject"><i class="fa-solid fa-plus"></i> Add project</button>
+            </div>
+            <hr>
+            <ul>
+                <li><i class="fa-solid fa-circle"></i> Homework</li>
+            </ul>
+        </section> -->
+    </div>
+    
+    <div class="addProject display-none">
+        <div>
+            <h2>Add Project</h2>
+            <hr>
+            <form action="">
+                <label for="nameProject">Name</label>
+                <input type="text" name="nameProject" id="nameProject" required>
+                <div>
+                    <input type="button" value="Cancel" id="cancel">
+                    <input type="submit" value="Add" id="addP">
+                </div>
+            </form>
+        </div>
     </div>
 
+    <script src="https://kit.fontawesome.com/dbaa0eaeaa.js" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
 </html>

@@ -12,10 +12,164 @@ nav{
     background-color: #ECEAEB;
     padding: 20px;
 }
-nav > div > h2 > a{
-    text-decoration: none;
+nav > div > div{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: #13111E;
 }
+nav > div > div > p{
+    font-weight: bold;
+}
+nav > div > div > i{
+    cursor: pointer;
+    display: none;
+    color: #ECEAEB;
+    transition: color 0.1s ease;
+}
+nav:hover > div > div > i{
+    color: #13111E;
+}
+nav > div > ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+nav > div > ul > li{
+    padding: 8px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+    transition: background-color 0.1s ease;
+    cursor: pointer;
+}
+nav > div > ul > li:hover{
+    background-color: rgba(19, 17, 30, 0.3);
+}
+nav > div > ul > li > i{
+    font-size: 10px;
+}
+/* CONTAINER */
 .container{
     background-color: #F5F5F5;
+    padding: 20px;
+}
+.container > section{
+    width: 1000px;
+    margin: 0 auto;
+}
+.container > section > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+.container > section > div > h1{
+    margin: 0;
+    font-size: 30px
+}
+.container > section > div > button{
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    background: none;
+    font-size: 15px;
+    height: 40px;
+    width: 140px;
+    transition: all 0.1s ease;
+}
+.container > section > div > button:hover{
+    background-color: #ECEAEB;
+}
+.container > section > ul{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+.container > section > ul > li{
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.1s ease;
+}
+.container > section > ul > li:hover{
+    background-color: rgba(19, 17, 30, 0.3);
+}
+.container > section > ul > li > i{
+    font-size: 10px;
+}
+/* ADD PROJECT */
+.addProject{
+    box-sizing: border-box;
+    padding: 50px;
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+}
+.addProject > div{
+    padding: 20px;
+    width: 400px;
+    height: 220px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+}
+.addProject > div > h2{
+    font-size: 18px;
+}
+.addProject > div > form{
+    margin-top: 30px;
+    font-weight: 500;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+}
+.addProject > div > form > input{
+    font-size: 15px;
+    padding: 5px;
+    margin: 10px 0px 20px;
+}
+.addProject > div > form > div{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+.addProject > div > form > div > input{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.addProject > div > form > div > #cancel{
+    background-color: #e97a7a;
+}
+.addProject > div > form > div > #addP{
+    background-color: #d9d5d7;
+}
+
+
+
+
+.display-none{
+    display: none;
 }
