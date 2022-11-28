@@ -49,9 +49,19 @@
                 <label for="descriptionTodo">Description</label>
                 <input type="text" name="descriptionTodo" id="descriptionTodo" required>
                 <label for="dueDateTodo">Due date</label>
-                <input type="text" name="dueDateTodo" id="dueDateTodo" required>
+                <input type="date" name="dueDateTodo" id="dueDateTodo" required>
                 <label for="priorityTodo">Priority</label>
-                <input type="number" name="priorityTodo" id="priorityTodo" min="1" max="4" required>
+                <div>
+                    <input type="radio" name="priority0" id="priority0">
+                    <label for="priority0">None</label>
+                    <input type="radio" name="priority1" id="priority1">
+                    <label for="priority1">Easy</label>
+                    <input type="radio" name="priority2" id="priority2">
+                    <label for="priority2">Medium</label>
+                    <input type="radio" name="priority3" id="priority3">
+                    <label for="priority3">High</label>
+                </div>
+                <!-- <input type="number" name="priorityTodo" id="priorityTodo" min="1" max="4" required> -->
 
                 <div>
                     <input type="button" value="Cancel" id="cancelT">
