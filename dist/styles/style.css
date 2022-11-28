@@ -40,20 +40,26 @@ nav > div > ul{
     flex-direction: column;
     gap: 10px;
 }
+nav > div > ul > li button{
+    display: none;
+}
 nav > div > ul > li{
     padding: 8px;
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    gap: 10px;
+    
     transition: background-color 0.1s ease;
     cursor: pointer;
 }
 nav > div > ul > li:hover{
     background-color: rgba(19, 17, 30, 0.3);
 }
-nav > div > ul > li > i{
+nav > div > ul > li > span{
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    gap: 10px;
+}
+nav > div > ul > li > span > i{
     font-size: 10px;
 }
 /* CONTAINER */
@@ -92,7 +98,7 @@ nav > div > ul > li > i{
     font-size: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
     list-style: none;
     padding: 0;
 }
@@ -100,8 +106,7 @@ nav > div > ul > li > i{
     cursor: pointer;
     font-size: 20px;
     display: flex;
-    align-items: center;
-    gap: 10px;
+    justify-content: space-between;
     padding: 15px;
     border-radius: 10px;
     transition: background-color 0.1s ease;
@@ -109,11 +114,33 @@ nav > div > ul > li > i{
 .container > section > ul > li:hover{
     background-color: rgba(19, 17, 30, 0.3);
 }
-.container > section > ul > li > i{
+.container > section > ul > li > button{
+    background: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+.container > section > ul > li > button:hover{
+    background-color: #d9d5d7;
+}
+.container > section > ul > li > button > i{
+    font-size: 25px;
+}
+.container > section > ul > li > span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.container > section > ul > li > span > i{
     font-size: 10px;
 }
 /* ADD PROJECT / TODO*/
-.addProject, .addTodo{
+.addProject,
+.editProject, 
+.addTodo{
     box-sizing: border-box;
     padding: 50px;
     position: absolute;
@@ -123,7 +150,9 @@ nav > div > ul > li > i{
     display: flex;
     justify-content: center;
 }
-.addProject > div, .addTodo > div{
+.addProject > div,
+.editProject > div,
+.addTodo > div{
     padding: 20px;
     width: 400px;
     height: min-content;
@@ -131,10 +160,12 @@ nav > div > ul > li > i{
     border-radius: 20px;
 }
 .addProject > div > h2,
+.editProject > div > h2,
 .addTodo > div > h2{
     font-size: 18px;
 }
 .addProject > div > form,
+.editProject > div > form,
 .addTodo > div > form{
     margin-top: 30px;
     font-weight: 500;
@@ -143,18 +174,21 @@ nav > div > ul > li > i{
     flex-direction: column;
 }
 .addProject > div > form > input,
+.editProject > div > form > input,
 .addTodo > div > form > input{
     font-size: 15px;
     padding: 5px;
     margin: 10px 0px 20px;
 }
 .addProject > div > form > div,
+.editProject > div > form > div,
 .addTodo > div > form > .buttons{
     display: flex;
     gap: 20px;
     justify-content: flex-end;
 }
 .addProject > div > form > div > input,
+.editProject > div > form > div > input,
 .addTodo > div > form > .buttons > input{
     padding: 0;
     display: flex;
@@ -167,10 +201,12 @@ nav > div > ul > li > i{
     cursor: pointer;
 }
 .addProject > div > form > div > #cancelP,
+.editProject > div > form > div > #cancelPE,
 .addTodo > div > form > .buttons > #cancelT{
     background-color: #e97a7a;
 }
 .addProject > div > form > div > #addP,
+.editProject > div > form > div > #addPE,
 .addTodo > div > form > .buttons > #addT{
     background-color: #d9d5d7;
 }
@@ -214,6 +250,40 @@ nav > div > ul > li > i{
 .addTodo > div > form > .radioInput > label{
     padding: 0 30px 0 0;
 }
+
+#todoLi{
+    display: flex;
+    justify-content: space-between;
+}
+#todoLi.priority0{
+    border: 2px solid #434343;
+}
+#todoLi:hover.priority0{
+    background-color: rgba(67, 67, 67, .2);
+}
+#todoLi.priority1{
+    border: 2px solid #44a9e4;
+}
+#todoLi:hover.priority1{
+    background-color: rgba(68, 169, 228, .2);
+}
+#todoLi.priority2{
+    border: 2px solid #EB8909;
+}
+#todoLi:hover.priority2{
+    background-color: rgba(235, 137, 9, .2);
+}
+#todoLi.priority3{
+    border: 2px solid #eb0909;
+}
+#todoLi:hover.priority3{
+    background-color: rgba(235, 9, 9, .2);
+}
+
+#projectLi button{
+    justify-self: end;
+}
+
 .display-none{
     display: none;
 }

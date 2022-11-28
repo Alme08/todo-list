@@ -15,6 +15,9 @@ Project.prototype.getTodoProject = function (){
 Project.prototype.getTitle = function(){
     return this.title;
 }
+Project.prototype.setTitle = function(title){
+    this.title = title;
+}
 const defaultProject = new Project('Default');
 projects.push(defaultProject);
 
@@ -23,13 +26,20 @@ export const addNewProject = (title)=>{
     projects.push(item)
     addUlProject();
 }
-
 export const addNewTodo = (todo, index) =>{
     projects[index].addTodoProject(todo)
 }
 export const getTodo = (index) =>{
    return projects[index].getTodoProject()
 }
+export const getTitleProject = (index) =>{
+   return projects[index].getTitle()
+}
+export const setTitleProject = (index, title) =>{
+    projects[index].setTitle(title)
+    addUlProject();
+}
+
 
 export const displayProjects = () =>{
     container.innerHTML = `
@@ -50,7 +60,7 @@ const addUlProject = () => {
     uls.forEach(ul=>{
         ul.textContent = '';
         for (let i = 0; i < projects.length; i++) {
-            ul.innerHTML += `<li data-index="${i}" id="projectLi"><i class="fa-solid fa-circle"></i>${projects[i].getTitle()}</li>` 
+            ul.innerHTML += `<li data-index="${i}" id="projectLi"><span data-index="${i}" id="projectLi"><i class="fa-solid fa-circle"></i>${projects[i].getTitle()}</span><button id="editProject" data-index="${i}"><i id="editProject" data-index="${i}" class="fa-solid fa-pen-to-square"></i></button><button><i class="fa-solid fa-trash"></i></button></li>` 
         }
     })
 }

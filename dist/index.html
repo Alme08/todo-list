@@ -39,6 +39,21 @@
         </div>
     </div>
 
+    <div class="editProject display-none">
+        <div>
+            <h2>Edit Project</h2>
+            <hr>
+            <form action="">
+                <label for="nameProject">Name</label>
+                <input type="text" name="nameProject" id="editNameProject" required>
+                <div>
+                    <input type="button" value="Cancel" id="cancelPE">
+                    <input type="submit" value="Edit" id="addPE">
+                </div>
+            </form>
+        </div>
+    </div>
+
     <div class="addTodo display-none">
         <div>
             <h2>Add Todo</h2>
@@ -52,16 +67,15 @@
                 <input type="date" name="dueDateTodo" id="dueDateTodo" required>
                 <label for="priorityTodo">Priority</label>
                 <div class="radioInput">
-                    <input type="radio" name="priority" id="priority0" value="0">
+                    <input type="radio" name="priority" id="priority0" value="priority0">
                     <label for="priority0">None</label>
-                    <input type="radio" name="priority" id="priority1" value="1">
+                    <input type="radio" name="priority" id="priority1" value="priority1">
                     <label for="priority1">Easy</label>
-                    <input type="radio" name="priority" id="priority2" value="2">
+                    <input type="radio" name="priority" id="priority2" value="priority2">
                     <label for="priority2">Medium</label>
-                    <input type="radio" name="priority" id="priority3" value="3">
+                    <input type="radio" name="priority" id="priority3" value="priority3">
                     <label for="priority3">High</label>
                 </div>
-                <!-- <input type="number" name="priorityTodo" id="priorityTodo" min="1" max="4" required> -->
 
                 <div class="buttons">
                     <input type="button" value="Cancel" id="cancelT">
