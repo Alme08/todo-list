@@ -60,7 +60,8 @@ const addUlProject = () => {
     uls.forEach(ul=>{
         ul.textContent = '';
         for (let i = 0; i < projects.length; i++) {
-            ul.innerHTML += `<li data-index="${i}" id="projectLi"><span data-index="${i}" id="projectLi"><i class="fa-solid fa-circle"></i>${projects[i].getTitle()}</span><button id="editProject" data-index="${i}"><i id="editProject" data-index="${i}" class="fa-solid fa-pen-to-square"></i></button><button><i class="fa-solid fa-trash"></i></button></li>` 
+            ul.innerHTML += `<li data-index="${i}" id="projectLi"><span data-index="${i}" id="projectLi"><i class="fa-solid fa-circle"></i>${projects[i].getTitle()}</span> 
+            <span id="spanButton"><button id="editProject" data-index="${i}"><i id="editProject" data-index="${i}" class="fa-solid fa-pen-to-square"></i></button><button><i class="fa-solid fa-trash"></i></button></li></span>` 
         }
     })
 }

@@ -114,7 +114,7 @@ nav > div > ul > li > span > i{
 .container > section > ul > li:hover{
     background-color: rgba(19, 17, 30, 0.3);
 }
-.container > section > ul > li > button{
+.container > section > ul > li > #spanButton > button{
     background: none;
     height: 60px;
     width: 60px;
@@ -123,10 +123,10 @@ nav > div > ul > li > span > i{
     cursor: pointer;
     transition: background-color 0.1s ease;
 }
-.container > section > ul > li > button:hover{
+.container > section > ul > li > #spanButton > button:hover{
     background-color: #d9d5d7;
 }
-.container > section > ul > li > button > i{
+.container > section > ul > li > #spanButton > button > i{
     font-size: 25px;
 }
 .container > section > ul > li > span{
@@ -278,10 +278,6 @@ nav > div > ul > li > span > i{
 }
 #todoLi:hover.priority3{
     background-color: rgba(235, 9, 9, .2);
-}
-
-#projectLi button{
-    justify-self: end;
 }
 
 .display-none{
