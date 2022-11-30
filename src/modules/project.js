@@ -12,6 +12,13 @@ Project.prototype.addTodoProject = function (todo){
 Project.prototype.getTodoProject = function (){
     return this._todoItems;
 }
+Project.prototype.deleteTodoProject = function (indexTodo){
+    this._todoItems = this._todoItems.filter((todo, i)=> {
+        if (i != indexTodo) {
+            return todo
+        }
+   })
+}
 Project.prototype.getTitle = function(){
     return this.title;
 }
@@ -34,12 +41,6 @@ export const deleteProject = (index) =>{
    })
    addUlProject();
 }
-export const addNewTodo = (todo, index) =>{
-    projects[index].addTodoProject(todo)
-}
-export const getTodo = (index) =>{
-   return projects[index].getTodoProject()
-}
 export const getTitleProject = (index) =>{
    return projects[index].getTitle()
 }
@@ -47,7 +48,16 @@ export const setTitleProject = (index, title) =>{
     projects[index].setTitle(title)
     addUlProject();
 }
-
+export const addNewTodo = (todo, index) =>{
+    projects[index].addTodoProject(todo)
+}
+export const getTodo = (index) =>{
+   return projects[index].getTodoProject()
+}
+export const deleteTodo = (indexTodo, indexProject) =>{
+    projects[indexProject].deleteTodoProject(indexTodo);
+    addUlTodo(getTodo(indexProject));
+}
 
 export const displayProjects = () =>{
     container.innerHTML = `

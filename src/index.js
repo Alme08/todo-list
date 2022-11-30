@@ -1,4 +1,4 @@
-import { addNewProject, deleteProject, displayProjects, displayProject, getTitleProject, setTitleProject } from "./modules/project.js";
+import { addNewProject, deleteProject, displayProjects, displayProject, getTitleProject, setTitleProject, deleteTodo} from "./modules/project.js";
 import { addTodoItem } from "./modules/todo.js";
 
 const addProjectScreen = document.querySelector('.addProject');
@@ -94,6 +94,16 @@ window.addEventListener('click', e =>{
             }
             break;
 
+        case 'editTodo':
+            console.log('editTodo');
+            break;
+
+        case 'deleteTodo':
+            console.log('deleteTodo');
+            console.log(e.target.dataset.index, e.target.dataset.indexproject);
+            deleteTodo(e.target.dataset.index, e.target.dataset.indexproject)
+            break;
+            
         default:
             break;
     }
