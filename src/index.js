@@ -69,6 +69,7 @@ window.addEventListener('click', e =>{
             nameT.value = '';
             descriptionT.value = '';
             dueDateT.value = '';
+            priorityTValue = '';
             for(let i = 0; i < priorityT.length; i++){
                 priorityT[i].checked = false;
             }
