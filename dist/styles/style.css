@@ -255,8 +255,23 @@ nav > div > ul > li > span > i{
     display: flex;
     justify-content: space-between;
 }
+#todoLi span button{
+    background: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+#todoLi span button i{
+    font-size: 25px;
+}
 #todoLi.priority0{
     border: 2px solid #434343;
+}
+#todoLi.priority0 span button:hover{
+    background-color: rgba(67, 67, 67, .3)
 }
 #todoLi:hover.priority0{
     background-color: rgba(67, 67, 67, .2);
@@ -264,17 +279,26 @@ nav > div > ul > li > span > i{
 #todoLi.priority1{
     border: 2px solid #44a9e4;
 }
+#todoLi.priority1 span button:hover{
+    background-color: rgba(68, 169, 228, .3)
+}
 #todoLi:hover.priority1{
     background-color: rgba(68, 169, 228, .2);
 }
 #todoLi.priority2{
     border: 2px solid #EB8909;
 }
+#todoLi.priority2 span button:hover{
+    background-color: rgba(235, 137, 9, .3)
+}
 #todoLi:hover.priority2{
     background-color: rgba(235, 137, 9, .2);
 }
 #todoLi.priority3{
     border: 2px solid #eb0909;
+}
+#todoLi.priority3 span button:hover{
+    background-color: rgba(235, 9, 9, .3)
 }
 #todoLi:hover.priority3{
     background-color: rgba(235, 9, 9, .2);
