@@ -99,8 +99,6 @@ window.addEventListener('click', e =>{
             break;
 
         case 'deleteTodo':
-            console.log('deleteTodo');
-            console.log(e.target.dataset.index, e.target.dataset.indexproject);
             deleteTodo(e.target.dataset.index, e.target.dataset.indexproject)
             break;
             
