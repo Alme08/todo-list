@@ -1,6 +1,6 @@
 import { addUlTodo } from "./todo";
 const container = document.querySelector('.container');
-export const projects = [];
+export let projects = [];
 
 function Project(title){
     this.title = title;
@@ -25,6 +25,14 @@ export const addNewProject = (title)=>{
     let item = new Project(title);
     projects.push(item)
     addUlProject();
+}
+export const deleteProject = (index) =>{
+   projects = projects.filter((project, i)=> {
+        if (i != index) {
+            return project
+        }
+   })
+   addUlProject();
 }
 export const addNewTodo = (todo, index) =>{
     projects[index].addTodoProject(todo)
@@ -61,7 +69,7 @@ const addUlProject = () => {
         ul.textContent = '';
         for (let i = 0; i < projects.length; i++) {
             ul.innerHTML += `<li data-index="${i}" id="projectLi"><span data-index="${i}" id="projectLi"><i class="fa-solid fa-circle"></i>${projects[i].getTitle()}</span> 
-            <span id="spanButton"><button id="editProject" data-index="${i}"><i id="editProject" data-index="${i}" class="fa-solid fa-pen-to-square"></i></button><button><i class="fa-solid fa-trash"></i></button></li></span>` 
+            <span id="spanButton"><button id="editProject" data-index="${i}"><i id="editProject" data-index="${i}" class="fa-solid fa-pen-to-square"></i></button><button id="deleteProject" data-index="${i}"><i class="fa-solid fa-trash" id="deleteProject" data-index="${i}"></i></button></li></span>` 
         }
     })
 }

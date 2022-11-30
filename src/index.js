@@ -1,4 +1,4 @@
-import { addNewProject, displayProjects, displayProject, getTitleProject, setTitleProject } from "./modules/project.js";
+import { addNewProject, deleteProject, displayProjects, displayProject, getTitleProject, setTitleProject } from "./modules/project.js";
 import { addTodoItem } from "./modules/todo.js";
 
 const addProjectScreen = document.querySelector('.addProject');
@@ -6,6 +6,12 @@ const nameProject = document.querySelector('#nameProject');
 const editProjectScreen = document.querySelector('.editProject');
 const editNameProject = document.querySelector('#editNameProject')
 const addTodoScreen = document.querySelector('.addTodo');
+
+let nameT = document.querySelector('#nameTodo');
+let descriptionT = document.querySelector('#descriptionTodo');
+let dueDateT = document.querySelector('#dueDateTodo');
+let priorityT = document.getElementsByName('priority');
+let priorityTValue;
 // const addT = document.querySelector('#addT');
 let indexProject;
 let editProjectIndex;
@@ -18,6 +24,11 @@ window.addEventListener('click', e =>{
             break;
         case 'addProject':
             addProjectScreen.classList.remove('display-none');
+            nameProject.value = '';
+            break;
+
+        case 'deleteProject':
+            deleteProject(e.target.dataset.index)
             break;
             
         case 'cancelP':
@@ -26,8 +37,10 @@ window.addEventListener('click', e =>{
                 
         case 'addP':
             e.preventDefault();
-            addNewProject(nameProject.value);
-            addProjectScreen.classList.add('display-none');
+            if (nameProject.value != '') {
+                addNewProject(nameProject.value);
+                addProjectScreen.classList.add('display-none');
+            }
             break;
         
         case 'projectLi':
@@ -53,6 +66,12 @@ window.addEventListener('click', e =>{
         case 'addTodo':
             indexProject = e.target.dataset.indexproject;
             addTodoScreen.classList.remove('display-none');
+            nameT.value = '';
+            descriptionT.value = '';
+            dueDateT.value = '';
+            for(let i = 0; i < priorityT.length; i++){
+                priorityT[i].checked = false;
+            }
             break;
         
         case 'cancelT':
@@ -61,11 +80,7 @@ window.addEventListener('click', e =>{
 
         case 'addT':
             e.preventDefault();
-            let nameT = document.querySelector('#nameTodo');
-            let descriptionT = document.querySelector('#descriptionTodo');
-            let dueDateT = document.querySelector('#dueDateTodo');
-            let priorityT = document.getElementsByName('priority');
-            let priorityTValue;
+            
             for(let i = 0; i < priorityT.length; i++){
                 if(priorityT[i].checked){
                     priorityTValue = priorityT[i].value;
@@ -73,10 +88,9 @@ window.addEventListener('click', e =>{
                 }
             }
             if (nameT.value && descriptionT.value && dueDateT.value && priorityTValue) {
-                console.log(si);
+                addTodoItem(nameT.value, descriptionT.value, dueDateT.value, priorityTValue, indexProject);
+                addTodoScreen.classList.add('display-none');
             }
-            addTodoItem(nameT.value, descriptionT.value, dueDateT.value, priorityTValue, indexProject);
-            addTodoScreen.classList.add('display-none');
             break;
 
         default:
