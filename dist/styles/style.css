@@ -137,10 +137,11 @@ nav > div > ul > li > span > i{
 .container > section > ul > li > span > i{
     font-size: 10px;
 }
-/* ADD PROJECT / TODO*/
+/* ADD/EDIT  PROJECT/TODO*/
 .addProject,
 .editProject, 
-.addTodo{
+.addTodo,
+.editTodo{
     box-sizing: border-box;
     padding: 50px;
     position: fixed;
@@ -152,7 +153,8 @@ nav > div > ul > li > span > i{
 }
 .addProject > div,
 .editProject > div,
-.addTodo > div{
+.addTodo > div,
+.editTodo > div{
     padding: 20px;
     width: 400px;
     height: min-content;
@@ -161,12 +163,14 @@ nav > div > ul > li > span > i{
 }
 .addProject > div > h2,
 .editProject > div > h2,
-.addTodo > div > h2{
+.addTodo > div > h2,
+.editTodo > div > h2{
     font-size: 18px;
 }
 .addProject > div > form,
 .editProject > div > form,
-.addTodo > div > form{
+.addTodo > div > form,
+.editTodo > div > form{
     margin-top: 30px;
     font-weight: 500;
     font-size: 18px;
@@ -175,21 +179,24 @@ nav > div > ul > li > span > i{
 }
 .addProject > div > form > input,
 .editProject > div > form > input,
-.addTodo > div > form > input{
+.addTodo > div > form > input,
+.editTodo > div > form > input{
     font-size: 15px;
     padding: 5px;
     margin: 10px 0px 20px;
 }
 .addProject > div > form > div,
 .editProject > div > form > div,
-.addTodo > div > form > .buttons{
+.addTodo > div > form > .buttons,
+.editTodo > div > form > .buttons{
     display: flex;
     gap: 20px;
     justify-content: flex-end;
 }
 .addProject > div > form > div > input,
 .editProject > div > form > div > input,
-.addTodo > div > form > .buttons > input{
+.addTodo > div > form > .buttons > input,
+.editTodo > div > form > .buttons > input{
     padding: 0;
     display: flex;
     align-items: center;
@@ -202,55 +209,70 @@ nav > div > ul > li > span > i{
 }
 .addProject > div > form > div > #cancelP,
 .editProject > div > form > div > #cancelPE,
-.addTodo > div > form > .buttons > #cancelT{
+.addTodo > div > form > .buttons > #cancelT,
+.editTodo > div > form > .buttons > #cancelTE{
     background-color: #e97a7a;
 }
 .addProject > div > form > div > #addP,
 .editProject > div > form > div > #addPE,
-.addTodo > div > form > .buttons > #addT{
+.addTodo > div > form > .buttons > #addT,
+.editTodo > div > form > .buttons > #addTE{
     background-color: #d9d5d7;
 }
 
-.addTodo > div > form > .radioInput{
+.addTodo > div > form > .radioInput,
+.editTodo > div > form > .radioInput{
     display: flex;
     margin: 20px 0;
     justify-content: space-around;
 }
-.addTodo > div > form > .radioInput > input{
+.addTodo > div > form > .radioInput > input,
+.editTodo > div > form > .radioInput > input{
     appearance: none;
     border-radius: 50%;
     width: 20px;
     height: 20px;
     border: 2px solid #000;
 }
-.addTodo > div > form > .radioInput > #priority0{
+.addTodo > div > form > .radioInput > #priority0,
+.editTodo > div > form > .radioInput > #priority0{
     border: 2px solid #434343;
 }
-.addTodo > div > form > .radioInput > #priority0:checked{
+.addTodo > div > form > .radioInput > #priority0:checked,
+.editTodo > div > form > .radioInput > #priority0:checked{
     background-color: #434343;
 }
-.addTodo > div > form > .radioInput > #priority1{
+.addTodo > div > form > .radioInput > #priority1,
+.editTodo > div > form > .radioInput > #priority1{
     border: 2px solid #44a9e4;
 }
-.addTodo > div > form > .radioInput > #priority1:checked{
+.addTodo > div > form > .radioInput > #priority1:checked,
+.editTodo > div > form > .radioInput > #priority1:checked{
     background-color: #44a9e4;
 }
-.addTodo > div > form > .radioInput > #priority2{
+.addTodo > div > form > .radioInput > #priority2,
+.editTodo > div > form > .radioInput > #priority2{
     border: 2px solid #EB8909;
 }
-.addTodo > div > form > .radioInput > #priority2:checked{
+.addTodo > div > form > .radioInput > #priority2:checked,
+.editTodo > div > form > .radioInput > #priority2:checked{
     background-color: #EB8909;
 }
-.addTodo > div > form > .radioInput > #priority3{
+.addTodo > div > form > .radioInput > #priority3,
+.editTodo > div > form > .radioInput > #priority3{
     border: 2px solid #eb0909;
 }
-.addTodo > div > form > .radioInput > #priority3:checked{
+.addTodo > div > form > .radioInput > #priority3:checked,
+.editTodo > div > form > .radioInput > #priority3:checked{
     background-color: #eb0909;
 }
-.addTodo > div > form > .radioInput > label{
+.addTodo > div > form > .radioInput > label,
+.editTodo > div > form > .radioInput > label{
     padding: 0 30px 0 0;
 }
 
+
+/* TODO LIST */
 #todoLi{
     display: flex;
     justify-content: space-between;
