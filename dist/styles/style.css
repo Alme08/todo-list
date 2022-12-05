@@ -141,7 +141,8 @@ nav > div > ul > li > span > i{
 .addProject,
 .editProject, 
 .addTodo,
-.editTodo{
+.editTodo,
+.infoTodo{
     box-sizing: border-box;
     padding: 50px;
     position: fixed;
@@ -154,7 +155,8 @@ nav > div > ul > li > span > i{
 .addProject > div,
 .editProject > div,
 .addTodo > div,
-.editTodo > div{
+.editTodo > div,
+.infoTodo > div{
     padding: 20px;
     width: 400px;
     height: min-content;
@@ -164,7 +166,8 @@ nav > div > ul > li > span > i{
 .addProject > div > h2,
 .editProject > div > h2,
 .addTodo > div > h2,
-.editTodo > div > h2{
+.editTodo > div > h2,
+.infoTodo > div > h2{
     font-size: 18px;
 }
 .addProject > div > form,
@@ -270,7 +273,9 @@ nav > div > ul > li > span > i{
 .editTodo > div > form > .radioInput > label{
     padding: 0 30px 0 0;
 }
-
+.infoTodo > div > p{
+    font-size: 18px;
+}
 
 /* TODO LIST */
 #todoLi{

@@ -21,7 +21,7 @@
         </div>
     </nav>
     <div class="container">
-
+        
     </div>
     
     <div class="addProject display-none">
@@ -91,20 +91,20 @@
             <hr>
             <form action="">
                 <label for="nameTodo">Name</label>
-                <input type="text" name="nameTodo" id="nameTodo" required>
+                <input type="text" name="nameTodo" id="editNameTodo" required>
                 <label for="descriptionTodo">Description</label>
-                <input type="text" name="descriptionTodo" id="descriptionTodo" required>
+                <input type="text" name="descriptionTodo" id="editDescriptionTodo" required>
                 <label for="dueDateTodo">Due date</label>
-                <input type="date" name="dueDateTodo" id="dueDateTodo" required>
+                <input type="date" name="dueDateTodo" id="editDueDateTodo" required>
                 <label for="priorityTodo">Priority</label>
                 <div class="radioInput">
-                    <input type="radio" name="priority" id="priority0" value="priority0">
+                    <input type="radio" name="editPriority" id="priority0" value="priority0">
                     <label for="priority0">None</label>
-                    <input type="radio" name="priority" id="priority1" value="priority1">
+                    <input type="radio" name="editPriority" id="priority1" value="priority1">
                     <label for="priority1">Easy</label>
-                    <input type="radio" name="priority" id="priority2" value="priority2">
+                    <input type="radio" name="editPriority" id="priority2" value="priority2">
                     <label for="priority2">Medium</label>
-                    <input type="radio" name="priority" id="priority3" value="priority3">
+                    <input type="radio" name="editPriority" id="priority3" value="priority3">
                     <label for="priority3">High</label>
                 </div>
 
@@ -116,6 +116,15 @@
         </div>
     </div>
 
+    <div class="infoTodo display-none" id="infoTodo">
+        <div>
+            <h2 id="todoTitleInfo">Todo title</h2>
+            <hr>
+            <p id="todoDescriptionInfo">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum sint sequi similique tempore necessitatibus odit eum laboriosam deserunt, id quasi nesciunt voluptate libero at maiores voluptatem commodi expedita ea exercitationem?</p>
+            <p> <b>Due date:</b> <span id="todoDueDateDescription">00/00/00</span></p>
+            <p> <b>Priority:</b> <span id="todoPriorityDescription">High</span></p>
+        </div>
+    </div>
     <script src="https://kit.fontawesome.com/dbaa0eaeaa.js" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>

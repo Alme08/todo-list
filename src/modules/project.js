@@ -1,4 +1,6 @@
 import { addUlTodo } from "./todo";
+import { populateStorage } from "..";
+
 const container = document.querySelector('.container');
 export let projects = [];
 
@@ -31,6 +33,7 @@ projects.push(defaultProject);
 export const addNewProject = (title)=>{
     let item = new Project(title);
     projects.push(item)
+    populateStorage();
     addUlProject();
 }
 export const deleteProject = (index) =>{
@@ -39,6 +42,7 @@ export const deleteProject = (index) =>{
             return project
         }
    })
+   populateStorage();
    addUlProject();
 }
 export const getTitleProject = (index) =>{
@@ -46,16 +50,19 @@ export const getTitleProject = (index) =>{
 }
 export const setTitleProject = (index, title) =>{
     projects[index].setTitle(title)
+    populateStorage();
     addUlProject();
 }
 export const addNewTodo = (todo, index) =>{
     projects[index].addTodoProject(todo)
+    populateStorage();
 }
 export const getTodo = (index) =>{
    return projects[index].getTodoProject()
 }
 export const deleteTodo = (indexTodo, indexProject) =>{
     projects[indexProject].deleteTodoProject(indexTodo);
+    populateStorage();
     addUlTodo(getTodo(indexProject));
 }
 
