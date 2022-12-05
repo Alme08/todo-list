@@ -1,5 +1,5 @@
-import { projects, addNewProject, deleteProject, displayProjects, displayProject, getTitleProject, setTitleProject, getTodo, deleteTodo} from "./modules/project.js";
-import { addTodoItem, addUlTodo } from "./modules/todo.js";
+import { projects, Project, addNewProject, deleteProject, displayProjects, displayProject, getTitleProject, setTitleProject, getTodo, deleteTodo} from "./modules/project.js";
+import { TodoItem, addTodoItem, addUlTodo } from "./modules/todo.js";
 
 const addProjectScreen = document.querySelector('.addProject');
 const editProjectScreen = document.querySelector('.editProject');
@@ -127,6 +127,7 @@ window.addEventListener('click', e =>{
                     break;
                 }
             }
+            populateStorage();
             addUlTodo(getTodo(indexProject));
             editTodoScreen.classList.add('display-none');
             break;
@@ -175,10 +176,6 @@ window.addEventListener('click', e =>{
                 default:
                     break;
             }
-            // todoPriorityInfo.textContent = 
-            // (getTodo(indexProject)[indexTodo].getPriority() == 'priority0') ? 'None' :
-            // (getTodo(indexProject)[indexTodo].getPriority() == 'priority1') ? 'Low' :
-            // (getTodo(indexProject)[indexTodo].getPriority() == 'priority2') ? 'Medium' : 'High'
             break;
         
         case 'infoTodo':
@@ -188,17 +185,25 @@ window.addEventListener('click', e =>{
             break;
     }
 })
-window.localStorage.clear();
 export const populateStorage = () => {
     localStorage.setItem('projects', JSON.stringify(projects));
-    console.log(JSON.stringify(projects));
   
     setLocalStorage();
 }
 const setLocalStorage = () =>{
-    const currentProjects = JSON.parse(localStorage.getItem('projects'));
-    console.log(projects, currentProjects);
-    return currentProjects;
+    let currentProjects = JSON.parse(localStorage.getItem('projects'));
+
+    for (let i = 0; i < currentProjects.length; i++) {
+        let todoArray = currentProjects[i]._todoItems;
+        currentProjects[i] = new Project(currentProjects[i].title);
+        currentProjects[i]._todoItems = todoArray
+        for (let j = 0; j < currentProjects[i]._todoItems.length; j++) {
+            currentProjects[i]._todoItems[j] = new TodoItem(currentProjects[i]._todoItems[j].title, currentProjects[i]._todoItems[j].description, currentProjects[i]._todoItems[j].dueDate, currentProjects[i]._todoItems[j].priority, currentProjects[i]._todoItems[j].indexProject)
+        }
+    }
+    for (let i = 0; i < currentProjects.length; i++) {
+        projects[i] = currentProjects[i];
+    }
 }
 
 if (!localStorage.getItem('projects')) {

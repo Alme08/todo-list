@@ -4,7 +4,7 @@ import { populateStorage } from "..";
 const container = document.querySelector('.container');
 export let projects = [];
 
-function Project(title){
+export function Project(title){
     this.title = title;
     this._todoItems = [];
 }
@@ -55,7 +55,9 @@ export const setTitleProject = (index, title) =>{
 }
 export const addNewTodo = (todo, index) =>{
     projects[index].addTodoProject(todo)
+    console.log(projects);
     populateStorage();
+    console.log(projects);
 }
 export const getTodo = (index) =>{
    return projects[index].getTodoProject()
@@ -85,7 +87,7 @@ const addUlProject = () => {
     uls.forEach(ul=>{
         ul.textContent = '';
         for (let i = 0; i < projects.length; i++) {
-            ul.innerHTML += `<li data-index="${i}" id="projectLi"><span data-index="${i}" id="projectLi"><i class="fa-solid fa-circle"></i>${projects[i].getTitle()}</span> 
+            ul.innerHTML += `<li data-index="${i}" id="projectLi"><span data-index="${i}" id="projectLi"><i class="fa-solid fa-circle"></i>${getTitleProject(i)}</span> 
             <span id="spanButton"><button id="editProject" data-index="${i}"><i id="editProject" data-index="${i}" class="fa-solid fa-pen-to-square"></i></button><button id="deleteProject" data-index="${i}"><i class="fa-solid fa-trash" id="deleteProject" data-index="${i}"></i></button></li></span>` 
         }
     })
@@ -95,7 +97,7 @@ export const displayProject = (index)=> {
     container.innerHTML = `
         <section class="">
             <div>
-                <h1>${projects[index].getTitle()}</h1>
+                <h1>${getTitleProject(index)}</h1>
                 <button id="addTodo" data-indexproject="${index}"><i class="fa-solid fa-plus"></i> Add Todo</button>
             </div>
             <ul id="todoList">

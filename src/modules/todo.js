@@ -1,6 +1,6 @@
 import { addNewTodo, getTodo } from "./project.js";
 
-function TodoItem(title, description, dueDate, priority, indexProject){
+export function TodoItem(title, description, dueDate, priority, indexProject){
     this.title = title;
     this.description = description;
     this.dueDate = dueDate;
